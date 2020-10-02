@@ -4,6 +4,7 @@ import SelectedContext from "../ctx/SelectedContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FiChevronRight } from "react-icons/fi";
+import { setSelectedAppLocalStorage } from "../utils/helpers";
 
 let PrettyApp = ({ app, all }) => {
   const [selected, setSelected] = useState(false);
@@ -26,6 +27,7 @@ let PrettyApp = ({ app, all }) => {
 
       setSelectedApps(updatedSelectedApps);
       setSelected(false);
+      setSelectedAppLocalStorage(updatedSelectedApps);
     } else {
       setSelected(true);
 
@@ -35,6 +37,7 @@ let PrettyApp = ({ app, all }) => {
       } else {
         setSelectedApps([...selectedApps, app]);
       }
+      setSelectedAppLocalStorage([...selectedApps, app]);
     }
   };
 

@@ -97,3 +97,7 @@ export let timeAgo = (isoDate) => {
   if (value != 1) unit = unit + "s";
   return value + " " + unit + " " + direction;
 }
+
+export let setSelectedAppLocalStorage = (apps) => {
+  localStorage.setItem("selectedApps", JSON.stringify(apps));
+}
